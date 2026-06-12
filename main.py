@@ -55,7 +55,7 @@ def trial(friendLevel = 0):
         sub.append(chooseSubskill())
     return sub
 
-SAMPLE_SIZE = 5000000
+SAMPLE_SIZE = 2*(10**7)
 
 results = []
 for i in range(SAMPLE_SIZE):
@@ -65,17 +65,20 @@ for i in range(SAMPLE_SIZE):
 
 BFS = 0
 BFS_HB = 0
+BFS_HS = 0
 
 for i in results:
     if "Berry Finding S" in i and "Helping Bonus" in i:
         BFS_HB += 1
     if "Berry Finding S" in i:
         BFS += 1
+    if "Berry Finding S"
 
 BFS_Prob = BFS/SAMPLE_SIZE
 BFS_HB_Prob = BFS_HB/SAMPLE_SIZE
 BFS_CONFIDENCE = (BFS_Prob*(1-BFS_Prob)/SAMPLE_SIZE)
 BFS_HB_CONFIDENCE = (BFS_HB_Prob*(1-BFS_HB_Prob)/SAMPLE_SIZE)
+
 print("Sample Size:", SAMPLE_SIZE)
 print("Friendship Level", friendLevel)
 print("Berry Finding S:", BFS)
